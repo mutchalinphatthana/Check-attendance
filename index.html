@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระบบเช็คชื่อสภานักเรียน</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container" id="reportArea">
+
+<div class="logo-box">
+<img src="images/IMG_0221.jpg" class="logo" alt="โลโก้โรงเรียน">
+</div>
+
+<div class="school-banner">
+🏫 สภานักเรียน โรงเรียนศรีสองรักษ์
+</div>
+
+<h1>ระบบเช็คชื่อสภานักเรียน</h1>
+
+<div style="margin:15px 0;">
+
+<label>📂 เลือกข้อมูลย้อนหลัง :</label>
+
+<select id="historySelect"></select>
+
+<button onclick="loadHistoryFromList()">
+ดูข้อมูล
+</button>
+
+</div>
+
+<div style="text-align:right;margin-bottom:15px;">
+    <button onclick="logout()" class="logout-btn">
+        ออกจากระบบ
+    </button>
+</div>
+
+<div class="date" id="today"></div>
+
+<div class="summary">
+
+<div class="card green">
+มา
+<div id="presentCount">0</div>
+</div>
+
+<div class="card orange">
+สาย
+<div id="lateCount">0</div>
+</div>
+
+<div class="card red">
+ขาด
+<div id="absentCount">0</div>
+</div>
+
+<div class="card gray">
+ลา
+<div id="leaveCount">0</div>
+</div>
+
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>ชื่อ-สกุล</th>
+<th>ตำแหน่ง</th>
+<th>สถานะ</th>
+</tr>
+</thead>
+
+<tbody id="memberTable">
+</tbody>
+
+</table>
+
+<button onclick="saveAttendance()">
+💾 บันทึกการเช็คชื่อ
+</button>
+
+<button onclick="exportPDF()">
+📄 ดาวน์โหลด PDF
+</button>
+
+<div id="result"></div>
+
+<h2>รายชื่อผู้มา</h2>
+<ul id="presentList"></ul>
+
+<h2>รายชื่อผู้สาย</h2>
+<ul id="lateList"></ul>
+
+<h2>รายชื่อผู้ขาด</h2>
+<ul id="absentList"></ul>
+
+<h2>รายชื่อผู้ลา</h2>
+<ul id="leaveList"></ul>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
