@@ -233,6 +233,7 @@ table.innerHTML += `
 
 <select class="status">
 
+<option value="" disabled selected> - </option>
 <option>มา</option>
 <option>สาย</option>
 <option>ขาด</option>
@@ -307,7 +308,7 @@ JSON.stringify(data)
 );
 
 fetch(
-"https://script.google.com/macros/s/AKfycbyuEb0N6bVfEfcGKX1tulN9LqKJkIzMsigLTWFiCFzNGYZl5i280AiYJvowE4QzzHYj/exec",
+"https://script.google.com/macros/s/AKfycbxukjkaMtWm_CI0DdvrfLsRMLbJD4UljHSfqYtJDNB6udghNY1Y5JdRtgDPdAAd8s1Q/exec",
 {
     method:"POST",
     mode:"no-cors",
@@ -602,7 +603,7 @@ async function loadHistoryFromSheet() {
         return;
     }
 
-    const response = await fetch("https://script.google.com/macros/s/AKfycbyuEb0N6bVfEfcGKX1tulN9LqKJkIzMsigLTWFiCFzNGYZl5i280AiYJvowE4QzzHYj/exec");
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyuEb0N6bVfEfcGKX1tulN9LqKJkIzMsigLTWFiCFzNGYZl5i280AiYJvowE4QzzHYj/exec");
 
     const rows = await response.json();
 
@@ -658,7 +659,7 @@ async function loadHistoryFromSheet() {
 
 }
 
-const API_URL = "https://script.google.com/macros/s/AKfycbyuEb0N6bVfEfcGKX1tulN9LqKJkIzMsigLTWFiCFzNGYZl5i280AiYJvowE4QzzHYj/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxukjkaMtWm_CI0DdvrfLsRMLbJD4UljHSfqYtJDNB6udghNY1Y5JdRtgDPdAAd8s1Q/exec";
 
 async function loadDateList() {
 
